@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebaseConfig";
 
 let initialValues = {
   name: "",
@@ -11,9 +16,34 @@ let initialValues = {
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    console.log(values);
+    if (!isSignInForm) {
+      createUserWithEmailAndPassword(auth, values.email, values.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          navigate("/browse");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+        });
+    } else {
+      signInWithEmailAndPassword(auth, values.email, values.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+          navigate("/browse");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+        });
+    }
   };
 
   const handleSignInToggle = () => {
@@ -51,6 +81,9 @@ const Login = () => {
         validate={validate}
       >
         <Form className="absolute w-3/12 bg-black my-36 p-12 bg-opacity-80 mx-auto right-0 left-0 text-white rounded-3xl">
+          {errorMessage !== null && (
+            <div className="text-red-400">{errorMessage}</div>
+          )}
           <p className="p-2 m-2 font-bold text-3xl">
             {isSignInForm ? "Sign In" : "Sign Up"}
           </p>
