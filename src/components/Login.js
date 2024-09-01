@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import {
   createUserWithEmailAndPassword,
@@ -17,15 +17,10 @@ let initialValues = {
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
-
   const onSubmit = (values) => {
     if (!isSignInForm) {
       createUserWithEmailAndPassword(auth, values.email, values.password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          navigate("/browse");
-        })
+        .then(() => {})
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
@@ -33,11 +28,7 @@ const Login = () => {
         });
     } else {
       signInWithEmailAndPassword(auth, values.email, values.password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
-        })
+        .then(() => {})
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
