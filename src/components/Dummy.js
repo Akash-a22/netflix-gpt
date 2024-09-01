@@ -6,7 +6,7 @@ const initialValues = {
   email: "",
 };
 const onSubmit = (values) => {
-  console.log(values);
+  
 };
 
 const Dummy = () => {

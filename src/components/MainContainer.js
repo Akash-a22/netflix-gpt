@@ -8,7 +8,7 @@ const MainContainer = () => {
   const movie = useSelector((store) => store.movies?.movie);
   if (movie === null) return;
   const trendingMovie = movie[getTrendingNumber()];
-  console.log(trendingMovie);
+ 
   const { original_title, overview ,id } = trendingMovie;
   return (
     <div>
