@@ -163,7 +163,7 @@ const Login = () => {
           <div className="font-extralight text-sm my-2">
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot.{" "}
-            <Link to="/" className="text-blue-400 underline">
+            <Link to="/learnMore" className="text-blue-400 underline">
               Learn more
             </Link>
           </div>

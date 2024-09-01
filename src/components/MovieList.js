@@ -6,14 +6,16 @@ const MovieList = ({ title, movie }) => {
   return (
     <div>
       <div className="p-6">
-        <div className="font-semibold text-white  text-xl">
-          Now Playing Movies{" > "}
+        <div className="font-semibold text-white  text-xl mb-2">
+          {title + " > "}
         </div>
-        <div className="flex overflow-x-auto no-scrollbar ">
-          <div className="flex">
-            {movie.map((m) => (
-              <MovieCards movie={m} key={m.id} />
-            ))}
+        <div className="">
+          <div className="flex overflow-x-scroll no-scrollbar ">
+            <div className="flex flex-nowrap">
+              {movie.map((m) => (
+                <MovieCards movie={m} key={m.id} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
