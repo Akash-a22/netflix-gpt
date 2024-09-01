@@ -5,9 +5,11 @@ import store from "./utils/store";
 
 function App() {
   return (
-    <Provider store={store}>
-      <Body />
-    </Provider>
+    <div className="bg-gray-200">
+      <Provider store={store}>
+        <Body />
+      </Provider>
+    </div>
   );
 }
 
