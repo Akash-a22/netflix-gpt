@@ -26,3 +26,27 @@ export const getMovieTrailorById = async (movieId) => {
     throw error;
   }
 };
+
+export const getUpComingMovies = async () => {
+  try {
+    const response = await api.get(
+      "https://api.themoviedb.org/3/movie/upcoming",
+      OPTIONS
+    );
+    return response?.data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getTopRatedMovies = async () => {
+  try {
+    const response = await api.get(
+      "https://api.themoviedb.org/3/movie/top_rated",
+      OPTIONS
+    );
+    return response?.data.results;
+  } catch (error) {
+    throw error;
+  }
+};
