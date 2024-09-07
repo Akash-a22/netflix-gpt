@@ -1,40 +1,41 @@
 # Netflix-gpt
 
-- Create react app
-- Configured TailwindCSS
+- Create React App
+- Configured Tailwind CSS
 - Header
 - Routing of App
-- Login form
-- Signup form
-- Form validation (Formik)
-- useRef hook
-- firebase setup
-- Deploying our app to production
-- Create Sign in user api
-- Implement Sign in user api
-- Created Redux store with user slice
-- Implemented Sign out
-- update profile
-- bugFix - related to navigate and sigin sign out
-- Unsubscribed to onAuthStateChanged event handler
-- Used values from constants
-- Navigate to /browser after sign in
-- Home page header
-- Background Trailer and Description about moive
-- Now playing , Popular and Trending carousel
-  
+- Login Form
+- Signup Form
+- Form Validation (Formik)
+- useRef Hook
+- Firebase Setup
+- Deploying Our App to Production
+- Create Sign-In User API
+- Implement Sign-In User API
+- Created Redux Store with User Slice
+- Implemented Sign-Out
+- Update Profile
+- Bug Fix - Related to Navigation and Sign-In/Sign-Out
+- Unsubscribed from onAuthStateChanged Event Handler
+- Used Values from Constants
+- Navigate to /browse After Sign-In
+- Home Page Header
+- Background Trailer and Description About Movie
+- Now Playing, Popular, and Trending Carousel
 
 # Features
 
-- login (signin / signout)
-- redirect to browse page
-- browse (after authentication)
+- Login (Sign-In / Sign-Out)
+- Redirect to Browse Page
+- Browse (After Authentication)
+- Header
+  - Main Movie
+  - Trailer in Background
+  - Title and Description
+- Carousel
+- Search Bar
+- Movie Suggestions
 
-  - Header
-  - main movie
-    - trailor in bg
-    - title and description
-  - carousel
-
-- searchbar
-- movie suggestions
+# Technology Used
+FRONTEND: HTML, CSS, JavaScript, ReactJS Library, Tailwind CSS, Axios
+BACKEND: Firebase
