@@ -18,6 +18,11 @@
 - bugFix - related to navigate and sigin sign out
 - Unsubscribed to onAuthStateChanged event handler
 - Used values from constants
+- Navigate to /browser after sign in
+- Home page header
+- Background Trailer and Description about moive
+- Now playing , Popular and Trending carousel
+  
 
 # Features
 
@@ -29,7 +34,7 @@
   - main movie
     - trailor in bg
     - title and description
-  - crousles
+  - carousel
 
 - searchbar
 - movie suggestions
